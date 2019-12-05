@@ -1,0 +1,97 @@
+<style type="text/css">
+    .scls {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    .scls:before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: -16px;
+        bottom: -13px;
+        left: 6px;
+        border: 1px solid #cccccc;
+        border-width: 0 0 0 1px;
+        z-index: 1;
+    }
+
+    .scls:after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 6px;
+        width: 26px;
+        height: 0;
+        border-top: 1px solid #cccccc;
+        z-index: 1;
+    }
+</style>
+<%# 这里是页面内容开始 %>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>管理员管理</h5>
+                    <div class="ibox-tools">
+                        <div class="btn btn-success btn-xs" id="addnew">添加新管理</div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>折叠</th>
+                                    <th>排序</th>
+                                    <th>分类名称</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% list.forEach(function(ls){ %>
+                                <tr>
+                                    <td name="bigcs">
+                                        <i class="fa fa-minus-square-o" data-bid="<%- ls.id %>"></i>
+                                    </td>
+                                    <td>
+                                        <input type="text" size="3" data-id="<%- ls.id %>" name="sort"
+                                            value="<%- ls.sort %>" />
+                                    </td>
+                                    <td>
+                                        <input type="text" size="8" data-id="<%- ls.id %>" name="classify_name"
+                                            value="<%- ls.classname %>" />
+                                    </td>
+                                </tr>
+                                <% if (ls.classify.length > 0) { %>
+                                    <% ls.classify.forEach(function(sm){ %>
+                                    <tr class="sm" name="smid<%- sm.top_id %>">
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            <div class="scls"></div>
+                                            <input type="text" size="3" data-id="<%- sm.id %>" name="sort"
+                                                value="<%- sm.sort %>" />
+                                        </td>
+                                        <td>
+                                            <div class="scls"></div>
+                                            <input type="text" size="8" data-id="<%- sm.id %>" name="classify_name"
+                                                value="<%- sm.classname %>" />
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                <% } %>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

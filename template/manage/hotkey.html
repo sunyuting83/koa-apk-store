@@ -1,0 +1,37 @@
+<%# 这里是页面内容开始 %>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5><%- title %></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>热词 </th>
+                                    <th>分类 </th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin">
+                                <% keylist.forEach(function(key){ %>
+                                <tr>
+                                    <td><%- key.value.keyname %></td>
+                                    <td><% if (key.value.classid == 1) { %>软件<% }else { %>游戏<% } %></td>
+                                    <td>
+                                        <div name="removeKey" data-key="<%- key.value.keyname %>" data-cid="<%- key.value.classid %>" class="btn btn-danger btn-xs">删除</div>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

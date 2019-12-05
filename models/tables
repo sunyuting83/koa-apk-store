@@ -1,0 +1,27 @@
+classify
+    id
+    classname
+    sort
+apkcontent
+    id
+    class_id
+    title
+    status
+    count
+download
+    id
+    book_id
+    content
+    sort
+cover
+    id
+    imgurl
+    book_id
+apkimage
+    id
+    imgurl
+    book_id
+tags
+    id
+    tag_id
+    apk_id

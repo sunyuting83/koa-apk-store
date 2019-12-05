@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.name">后台管理系统</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/iCheck/1.0.1/skins/square/green.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/awesome-bootstrap-checkbox/1.0.1/awesome-bootstrap-checkbox.min.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">SP+</h1>
+
+            </div>
+            <h3>Welcome to SP+</h3>
+            <form method="post" name="login" class="m-t " role="form">
+                <div class="form-group">
+                    <input class="form-control" id="user_name" name="user_name" placeholder="用户名" required type="text" value="">
+                
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="user_password" name="user_password" placeholder="密码" required type="password" value="">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7">
+                            <input class="form-control" id="verify_code" name="verify_code" placeholder="验证码" required type="text" value="">
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                        <img src="/manage/getcode" style="width:100%;min-height:32px" onclick="this.src='/manage/getcode?'+ Math.random()">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary block full-width m-b" id="submit" name="submit" placeholder="登录" type="submit" value="登录">
+                </div>
+			</form>
+        </div>
+    </div>
+    <!-- Mainly scripts -->
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+	<script>
+        $(document).ready(function() {
+            <% if (message) { %>
+                setTimeout(function() {
+                    toastr.options = {
+                        closeButton: true,
+                        progressBar: true,
+                        showMethod: 'slideDown',
+                        timeOut: 4000
+                    };
+                    toastr.error(
+                        <%- "'" +message.message+"'"%>,
+                        <%- "'" +message.message+"'"%>
+                    );
+
+                }, 600);
+
+            <% } %>
+		})
+	</script>
+</body>
+</html>

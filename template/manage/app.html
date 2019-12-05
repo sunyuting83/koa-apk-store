@@ -1,0 +1,121 @@
+<%# 这里是页面内容开始 %>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-sx-2 col-lg-2">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>分类</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div id="jstree1">
+                        <ul>
+                            <% classify.forEach(function(ls){ %>
+                                <li class="jstree-open"><%- ls.classname %>
+                                <% if (ls.classify.length > 0) { %>
+                                    <% ls.classify.forEach(function(sm){ %>
+                                    <ul>
+                                        <li data-jstree='types:css}' onclick="javascript:(location.href='<%- link %>?cid=<%- sm.id %>')" class="<% if (sm.id == cid) { %>jstree-clicked<% } %>">
+                                            <%- sm.classname %>
+                                        </li>
+                                    </ul>
+                                    <% }); %>
+                                <% } %>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sx-10 col-lg-10">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5><%- title %></h5>
+                    <div class="ibox-tools">
+                        <div class="btn btn-success btn-xs" id="addnew">添加新管理</div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID </th>
+                                    <th>APK名称 </th>
+                                    <th>大小</th>
+                                    <th>版本</th>
+                                    <th>语言</th>
+                                    <th>更新时间</th>
+                                </tr>
+                            </thead>
+                            <tbody id="apk">
+                                <% apklist.forEach(function(apk){ %>
+                                <tr>
+                                    <td>
+                                        <%- apk.id %>
+                                    </td>
+                                    <td>
+                                        <%- apk.title %>
+                                    </td>
+                                    <td>
+                                        <%- apk.more.apk_size %>
+                                    </td>
+                                    <td>
+                                        <%- apk.more.apk_version %>
+                                    </td>
+                                    <td>
+                                        <%- apk.more.apk_language %>
+                                    </td>
+                                    <td>
+                                        <%- apk.created_at %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                <% if (count > 0 && count >= 30) { %>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="footable-visible">
+                                            <ul class="pagination pull-right">
+                                                <%
+                                                    let page = Math.ceil(count / 30);
+                                                %>
+                                                <li class="footable-page-arrow">
+                                                    <a data-page="first" href="<%- link %>?cid=<%- cid %>&page=1">«</a>
+                                                </li>
+                                                <li class="footable-page-arrow <% if (thisp == 1) { %>disabled<% } %>">
+                                                    <a data-page="prev" href="<% if (thisp == 1) { %>#<% } else { %><%- link %>?cid=<%- cid %>&page=<%- parseInt(thisp - 1) %><% } %>">‹</a>
+                                                </li>
+                                                <% for (let i = 1; i < page + 1; i++) {  %>
+                                                    <li class="footable-page <% if (thisp == i) { %>active<% } %>">
+                                                        <a href="<%- link %>?cid=<%- cid %>&page=<%- i %>"><%- i %></a>
+                                                    </li>
+                                                <% } %>
+                                                <li class="footable-page-arrow <% if (thisp == page) { %>disabled<% } %>">
+                                                    <a data-page="next" href="<% if (thisp == page) { %>#<% } else { %><%- link %>?cid=<%- cid %>&page=<%- parseInt(parseInt(thisp) + parseInt(1)) %><% } %>">›</a>
+                                                </li>
+                                                <li class="footable-page-arrow">
+                                                    <a data-page="last" href="<%- link %>?cid=<%- cid %>&page=<%- page %>">»</a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

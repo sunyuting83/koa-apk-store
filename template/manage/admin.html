@@ -1,0 +1,49 @@
+<%# 这里是页面内容开始 %>
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>管理员管理</h5>
+                    <div class="ibox-tools">
+                        <div class="btn btn-success btn-xs" id="addnew">添加新管理</div>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>用户名 </th>
+                                    <th>最后登录IP </th>
+                                    <th>最后登录时间</th>
+                                    <th>登录次数</th>
+                                    <th>创建时间</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin">
+                                <% adminlist.forEach(function(admin){ %>
+                                <tr>
+                                    <td><%- admin.value.username %></td>
+                                    <td><%- admin.value.lastip %></td>
+                                    <td><%- admin.value.lasttime %></td>
+                                    <td><%- admin.value.login_size %></td>
+                                    <td><%- admin.value.created_time %></td>
+                                    <td>
+                                        <div name="changepwd" data-key="<%- admin.value.username %>" class="btn btn-primary btn-xs">修改密码</div>
+                                        <% if(user.username !== admin.value.username) { %>
+                                        <div name="remove" data-key="<%- admin.value.username %>" class="btn btn-danger btn-xs">删除</div>
+                                        <% } %>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

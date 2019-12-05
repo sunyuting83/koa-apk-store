@@ -1,0 +1,42 @@
+{
+  "name": "apkscrapy",
+  "version": "1.0.0",
+  "description": "Android APK Scrapy with async",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "koa",
+    "scropy",
+    "async"
+  ],
+  "author": "Sun",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "2.6.1",
+    "bookshelf": "^0.13.3",
+    "ccap": "^0.6.10",
+    "cheerio": "^1.0.0-rc.2",
+    "deasync-promise": "1.0.1",
+    "ejs": "^2.6.1",
+    "html-entities": "^1.2.1",
+    "knex": "^0.13.0",
+    "koa": "2.0.0",
+    "koa-bodyparser": "3.2.0",
+    "koa-compress": "^3.0.0",
+    "koa-passport": "^4.1.1",
+    "koa-router": "7.0.0",
+    "koa-session": "^5.10.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "koa2-cors": "^2.0.6",
+    "level": "^4.0.0",
+    "level-ttl": "^3.1.1",
+    "node-schedule": "^1.3.0",
+    "pg": "^7.4.3",
+    "superagent": "^3.8.3",
+    "superagent-charset": "^1.2.0",
+    "system-sleep": "1.2"
+  }
+}

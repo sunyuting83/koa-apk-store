@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "INSPINIA 2.4"
+  },
+  "nav": {
+    "dashboard": "Dashboards",
+    "graphs": "Graphs",
+    "mailbox": "Mailbox"
+  }
+}
