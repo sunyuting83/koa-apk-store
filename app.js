@@ -2,13 +2,13 @@ const Koa = require('koa'),
       bodyParser = require('koa-bodyparser'), // 导入controller middleware:
       router = require('./router'),
       logger = require("./utils/logger"),
-      cors = require('koa2-cors'),
+      // cors = require('koa2-cors'),
       static = require('koa-static'), //koa 静态文件中间件
       session = require('koa-session'),
       errThrow = require('./utils/error'),
       app = new Koa();
 
-app.use(cors());
+// app.use(cors());
 
 // 配置模版引擎中间件
 const views = require('koa-views'); // koa
