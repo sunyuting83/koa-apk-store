@@ -1,5 +1,5 @@
 // var schedule = require('node-schedule');
-const getList = require('./createList');
+// const getList = require('./createList');
 const Scropy = require('./scropy');
 
 let scropy = async () => {
