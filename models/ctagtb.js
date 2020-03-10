@@ -7,8 +7,8 @@ Bookshelf.knex.schema.createTable('apkcontent_tags', function (table) {
     table.integer('apkcontent_id').unsigned().references('apkcontent.id');
     table.integer('tag_id').unsigned().references('tags.id');
     table.comment('apk-TAG联表');
-})
-.then(function () {
+  })
+  .then(function () {
     console.log('table created');
     process.exit();
-});
+  });

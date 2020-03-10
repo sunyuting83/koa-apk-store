@@ -11,3 +11,4 @@ cs.js
 geta.js
 yarn.lock
 node_modules
+utils/classdome.js

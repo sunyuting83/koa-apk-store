@@ -1,7 +1,7 @@
 const bookshelf = require('./base')();
 
 var ErrorUrl = bookshelf.Model.extend({
-    tableName: 'errorurl'
+  tableName: 'errorurl'
 });
 
 module.exports = ErrorUrl;

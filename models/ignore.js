@@ -1,7 +1,7 @@
 const bookshelf = require('./base')();
 
 var Ignore = bookshelf.Model.extend({
-    tableName: 'ignore'
+  tableName: 'ignore'
 });
 
 module.exports = Ignore;
