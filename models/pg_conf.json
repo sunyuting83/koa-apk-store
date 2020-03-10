@@ -1,10 +1,10 @@
 {
-    "client": "pg",
-    "version": "9.6.9",
-    "connection": {
-        "host": "127.0.0.1",
-        "user": "apkdown",
-        "password": "penny5921929",
-        "database": "apkshop"
-    }
+  "client": "pg",
+  "version": "9.6.9",
+  "connection": {
+    "host": "127.0.0.1",
+    "user": "apkdown",
+    "password": "123123123",
+    "database": "apkshop"
+  }
 }
