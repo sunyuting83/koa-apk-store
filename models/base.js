@@ -14,7 +14,5 @@ module.exports = function () {
 
   Bookshelf = require('bookshelf')(knex);
 
-  Bookshelf.plugin(['registry', 'pagination']);
-
   return Bookshelf;
 };
