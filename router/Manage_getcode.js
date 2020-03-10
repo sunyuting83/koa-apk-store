@@ -1,8 +1,9 @@
-var ccap = require('ccap')();
+// var ccap = require('ccap')();
 const fn_getcode = async (ctx, next) => {
   // ctx.response.body = 'hello world';
   return next().then(() => {
-    let ary = ccap.get();
+    // let ary = ccap.get();
+    let ary = ['a','b']
     let txt = ary[0];
     let buf = ary[1];
     ctx.body = buf; //直接输出图片
