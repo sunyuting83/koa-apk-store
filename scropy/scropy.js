@@ -58,15 +58,15 @@ let getRootUrl = (tp) => {
   switch (tp) {
     case 'game':
       url.u = 'https://m.anruan.com/yxxz/list_4_1_1_';
-      url.n = 100;
+      url.n = 30;
       break;
     case 'soft':
       url.u = 'https://m.anruan.com/rjxz/list_5_1_1_';
-      url.n = 100;
+      url.n = 30;
       break;
     default:
       url.u = 'https://m.anruan.com/rjxz/list_5_1_1_';
-      url.n = 100;
+      url.n = 30;
       break;
   };
   return url;

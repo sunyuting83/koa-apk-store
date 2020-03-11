@@ -11,8 +11,8 @@ let getList = (type) => {
     };
     // console.log(firstUrl);
     HttpGet(firstUrl)
-      .then(async (listdata) => {
-        let listTotal = await createList(listdata);
+      .then(listdata => {
+        let listTotal = createList(listdata);
         resolve(listTotal);
       })
       .catch((error) => {
@@ -22,22 +22,20 @@ let getList = (type) => {
 };
 
 let createList = (data) => {
-  return new Promise((resolve, reject) => {
-    var $ = cheerio.load(data);
-    let $page = $('.page').children('a');
-    let lasturl = '';
-    $page.each((i, e) => {
-      const name = $(e).text();
-      if (name === '尾页') {
-        lasturl = $(e).attr('href');
-      }
-    });
-    // 获取总页数
-    lasturl = lasturl.split('.')[0];
-    lasturl = lasturl.split('_');
-    lastlen = lasturl.length;
-    resolve(lasturl[lastlen - 1]);
+  var $ = cheerio.load(data);
+  let $page = $('.page').children('a');
+  let lasturl = '';
+  $page.each((i, e) => {
+    const name = $(e).text();
+    if (name === '尾页') {
+      lasturl = $(e).attr('href');
+    }
   });
+  // 获取总页数
+  lasturl = lasturl.split('.')[0];
+  lasturl = lasturl.split('_');
+  lastlen = lasturl.length;
+  return(lasturl[lastlen - 1]);
 };
 
 module.exports = getList;
