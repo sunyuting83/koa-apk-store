@@ -4,7 +4,7 @@ const Koa = require('koa'),
       logger = require("./utils/logger"),
       // cors = require('koa2-cors'),
       static = require('koa-static'), //koa 静态文件中间件
-      session = require('koa-session'),
+      // session = require('koa-session'),
       errThrow = require('./utils/error'),
       app = new Koa();
 
@@ -29,6 +29,7 @@ app.use(Compress({
   threshold: 2048 // 要压缩的最小响应字节
 }));
 
+/** 
 // 设置session
 app.keys = ['XbFrb9PfkWP63nghK7zZKwYBolhX'];
 let CONFIG = {
@@ -43,7 +44,7 @@ let CONFIG = {
 
 // 设置session
 app.use(session(CONFIG, app));
-
+*/
 //设置静态资源的路径 
 app.use(static(__dirname + '/static'));
 
