@@ -9,21 +9,17 @@ const {
 } = require('../utils');
 
 let AdminList = async() => {
-  return new Promise(async (resolve, reject) => {
-    /**
-     * 返回代码：
-     * @1 登录成功
-     * @2 密码错误
-     * @3 用户不存在
-     */
-    const parms = {
-      prefix: 'user:'
-    };
-    const adminlist = await find(parms);
-    return deletePassword(adminlist)
-    // let adls = deletePassword(await find(parms));
-    // resolve(adls);
-  });
+  /**
+   * 返回代码：
+   * @1 登录成功
+   * @2 密码错误
+   * @3 用户不存在
+   */
+  const parms = {
+    prefix: 'user:'
+  };
+  const adminlist = await find(parms);
+  return deletePassword(adminlist)
 };
 
 let changePassword = async(k, p) => {
