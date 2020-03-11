@@ -1,10 +1,5 @@
 require.config({
   baseUrl: 'https://cdn.bootcss.com/',
-  map: {
-    '*': {
-      'css': 'require-css/0.1.10/css.min'
-    }
-  },
   paths: {
     'jquery': 'jquery/2.1.1/jquery.min',
     'bootstrap': 'bootstrap/3.3.6/js/bootstrap.min',
@@ -19,25 +14,18 @@ require.config({
   },
   shim: {
     'bootstrap': [
-      'jquery',
-      'css!https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min',
-      'css!font-awesome/4.7.0/css/font-awesome.min',
-      'css!animate.css/3.7.0/animate.min',
-      'css!https://apkshop-kindlesend.oss-cn-beijing.aliyuncs.com/static/style'
+      'jquery'
     ],
     'metisMenu': ['jquery'],
     'jQuery-slimScroll': ['jquery'],
     'toastr': [
-      'jquery',
-      'css!https://cdn.bootcss.com/toastr.js/latest/css/toastr.min'
+      'jquery'
     ],
     'layer': [
-      'jquery',
-      'css!https://cdn.bootcss.com/layer/2.3/skin/layer'
+      'jquery'
     ],
     'jstree': [
-      'jquery',
-      'css!https://cdn.bootcss.com/jstree/3.3.7/themes/default/style.min'
+      'jquery'
     ]
   }
 });
