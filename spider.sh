@@ -5,7 +5,7 @@
 basepath=$(cd `dirname $0`; pwd)
 export PATH=/usr/local/node/bin:/sbin:/bin:/usr/bin
 cd $basepath
-node spider/app.js
+node scropy/app.js
 
 
 # add crontab
